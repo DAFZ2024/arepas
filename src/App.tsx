@@ -369,7 +369,7 @@ function App() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 relative z-10">
             {products.arepas.map(product => (
-              <div key={product.id} className="group bg-stone-900/50 backdrop-blur-sm p-3 hover:shadow-[0_20px_50px_-15px_rgba(245,158,11,0.15)] transition-all duration-500 border border-white/5 flex flex-col h-full transform hover:-translate-y-3 relative overflow-hidden rounded-full aspect-square justify-center items-center">
+              <div key={product.id} className="group bg-stone-900/50 backdrop-blur-sm p-6 md:p-3 hover:shadow-[0_20px_50px_-15px_rgba(245,158,11,0.15)] transition-all duration-500 border border-white/5 flex flex-col h-full transform hover:-translate-y-3 relative overflow-hidden rounded-[2.5rem] md:rounded-full aspect-auto md:aspect-square justify-center items-center min-h-[350px] md:min-h-0">
                 
                 {/* Badge flotante */}
                 {product.badge && (
@@ -557,14 +557,14 @@ function App() {
           ></div>
           
           {/* Panel lateral con borde muy curvo simulando media arepa */}
-          <div className="relative w-[92vw] sm:w-[520px] bg-stone-950 h-full shadow-[-30px_0_60px_rgba(0,0,0,0.8)] flex flex-col animate-slide-in rounded-l-[120px] sm:rounded-l-[250px] overflow-hidden border-l-[6px] md:border-l-[8px] border-amber-500/60">
+          <div className="relative w-[95vw] sm:w-[520px] bg-stone-950 h-full shadow-[-30px_0_60px_rgba(0,0,0,0.8)] flex flex-col animate-slide-in rounded-l-[40px] sm:rounded-l-[250px] overflow-hidden border-l-[6px] md:border-l-[8px] border-amber-500/60">
             
             {/* Header del carrito */}
-            <div className="bg-stone-900 border-b border-white/5 pl-14 pr-6 sm:pl-[110px] sm:pr-10 py-6 flex justify-between items-center shadow-lg z-10 relative">
+            <div className="bg-stone-900 border-b border-white/5 pl-6 pr-4 sm:pl-[110px] sm:pr-10 py-5 sm:py-6 flex justify-between items-center shadow-lg z-10 relative">
               {/* Decoración curva extra para simular tostado de parrilla edge */}
-              <div className="absolute inset-y-0 left-0 w-12 sm:w-20 bg-gradient-to-r from-amber-500/10 via-orange-500/5 to-transparent pointer-events-none"></div>
+              <div className="absolute inset-y-0 left-0 w-10 sm:w-20 bg-gradient-to-r from-amber-500/10 via-orange-500/5 to-transparent pointer-events-none"></div>
               
-              <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-3 relative z-10 ml-6 sm:ml-8">
+              <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-3 relative z-10 ml-2 sm:ml-8">
                 <div className="bg-gradient-to-br from-amber-400 to-orange-500 text-stone-950 p-2 rounded-2xl shadow-lg shadow-orange-500/20 transform -rotate-12">
                   {/* Custom Arepa/Media Arepa Icon mini */}
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -590,8 +590,8 @@ function App() {
             <div className="flex-1 overflow-y-auto w-full scroll-smooth">
               {cart.length === 0 ? (
                 /* Estado Vacío */
-                <div className="h-full flex flex-col items-center justify-center text-stone-500 p-6 pl-14 sm:pl-[120px] sm:pr-10 text-center pt-20 relative z-10">
-                  <div className="absolute inset-y-0 left-0 w-12 sm:w-20 bg-gradient-to-r from-amber-500/5 via-orange-500/5 to-transparent pointer-events-none"></div>
+                <div className="h-full flex flex-col items-center justify-center text-stone-500 p-6 pl-6 sm:pl-[120px] sm:pr-10 text-center pt-20 relative z-10">
+                  <div className="absolute inset-y-0 left-0 w-10 sm:w-20 bg-gradient-to-r from-amber-500/5 via-orange-500/5 to-transparent pointer-events-none"></div>
                   
                   <div className="bg-stone-900/80 p-8 rounded-[2.5rem] shadow-inner mb-6 border border-white/5 relative overflow-hidden group">
                     <div className="absolute inset-0 bg-amber-500/5 blur-2xl group-hover:bg-amber-500/10 transition-colors duration-500"></div>
@@ -608,13 +608,13 @@ function App() {
                 </div>
               ) : (
                 /* Lista de productos */
-                <div className="pl-14 pr-4 py-6 sm:pl-[120px] sm:pr-10 sm:py-8 space-y-4 relative z-10">
-                  <div className="absolute inset-y-0 left-0 w-12 sm:w-20 bg-gradient-to-r from-amber-500/10 via-orange-500/5 to-transparent pointer-events-none"></div>
+                <div className="pl-4 pr-3 py-6 sm:pl-[120px] sm:pr-10 sm:py-8 space-y-4 relative z-10">
+                  <div className="absolute inset-y-0 left-0 w-10 sm:w-20 bg-gradient-to-r from-amber-500/10 via-orange-500/5 to-transparent pointer-events-none"></div>
 
                   {cart.map(item => (
-                    <div key={item.cartId} className="bg-stone-900/50 p-3 sm:p-4 hover:scale-[1.02] rounded-3xl shadow-md border border-white/5 flex items-center gap-3 sm:gap-4 group hover:bg-stone-900 transition-all duration-300 relative z-10">
+                    <div key={item.cartId} className="bg-stone-900/50 p-2.5 sm:p-4 hover:scale-[1.02] rounded-2xl sm:rounded-3xl shadow-md border border-white/5 flex items-center gap-2 sm:gap-4 group hover:bg-stone-900 transition-all duration-300 relative z-10">
                       
-                      <div className="w-20 h-20 rounded-xl overflow-hidden bg-stone-950 flex-shrink-0">
+                      <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-stone-950 flex-shrink-0">
                         <img src={item.imgUrl} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                       </div>
                       
@@ -644,7 +644,7 @@ function App() {
                   
                   {/* FORMULARIO DE CHECKOUT */}
                   <div className="mt-8 relative animate-fade-in">
-                    <div className="bg-stone-900 border border-white/5 text-white p-6 sm:p-8 rounded-[2rem] shadow-xl relative overflow-hidden">
+                    <div className="bg-stone-900 border border-white/5 text-white p-4 sm:p-8 rounded-3xl sm:rounded-[2rem] shadow-xl relative overflow-hidden">
                       {/* Decoration Flotantes tipo 'fuego/brasas' */}
                       <div className="absolute top-0 right-0 w-48 h-48 bg-orange-600/10 rounded-full -mr-20 -mt-20 blur-[50px] pointer-events-none"></div>
                       <div className="absolute bottom-0 left-0 w-32 h-32 bg-amber-500/10 rounded-full -ml-16 -mb-16 blur-[40px] pointer-events-none"></div>
